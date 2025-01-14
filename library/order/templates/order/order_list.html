@@ -1,0 +1,23 @@
+<!-- lib/order/templates/order_list.html -->
+
+<h1>All Orders</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.title }}</td>
+            <td>{{ order.description }}</td>
+            <td>{{ order.status }}</td>
+            <td><a href="{% url 'close_order' order.id %}">Close</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

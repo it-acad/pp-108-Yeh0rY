@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="post" action="/auth/register/">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter your first name">
+        <br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Enter your last name">
+        <br>
+
+        <label for="middle_name">Middle Name:</label>
+        <input type="text" id="middle_name" name="middle_name" placeholder="Enter your middle name">
+        <br>
+
+        <label for="is_librarian">Register as Librarian:</label>
+        <input type="checkbox" id="is_librarian" name="is_librarian">
+        <br>
+
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/auth/login/">Log in here</a>.</p>
+</body>
+</html>

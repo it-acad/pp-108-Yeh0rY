@@ -1,0 +1,11 @@
+<!-- lib/order/templates/order_create.html -->
+
+<h1>Create New Order</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="book">Book:</label>
+    <textarea id="book" name="book" required></textarea><br><br>
+
+    <button type="submit">Create Order</button>
+</form>
+<a href="{% url 'user_orders' %}">Back to Your Orders</a>

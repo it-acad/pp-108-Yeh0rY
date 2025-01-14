@@ -1,0 +1,10 @@
+<!-- lib/user/templates/user_detail.html -->
+
+<h1>User Details: {{ user.first_name }} {{ user.middle_name }} {{ user.last_name }}</h1>
+<p>Email: {{ user.email }}</p>
+<p>Role: {{ user.get_role_name }}</p>
+<p>Active: {{ user.is_active }}</p>
+<p>Joined: {{ user.created_at }}</p>
+<p>Last Updated: {{ user.updated_at }}</p>
+
+<a href="{% url 'users_list' %}">Back to Users</a>

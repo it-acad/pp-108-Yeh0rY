@@ -1,0 +1,20 @@
+<!-- lib/author/templates/author_list.html -->
+
+<h1>All Authors</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.name }}</td>
+            <td><a href="{% url 'delete_author' author.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'create_author' %}">Create New Author</a>

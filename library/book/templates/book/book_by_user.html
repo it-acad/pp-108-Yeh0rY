@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books by User</title>
+</head>
+<body>
+    <h1>Books Borrowed by User</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- lib/order/templates/user_order_list.html -->
+
+<h1>Your Orders</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.title }}</td>
+            <td>{{ order.description }}</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'create_order' %}">Create a New Order</a>

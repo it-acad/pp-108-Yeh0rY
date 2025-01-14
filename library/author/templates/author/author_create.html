@@ -1,0 +1,11 @@
+<!-- lib/author/templates/author_create.html -->
+
+<h1>Create New Author</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <button type="submit">Create Author</button>
+</form>
+<a href="{% url 'authors_list' %}">Back to Authors</a>

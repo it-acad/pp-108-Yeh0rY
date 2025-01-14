@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Library System</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h2>Welcome back, {{ user.first_name }}!</h2>
+        <p>Thank you for logging into the Library System.</p>
+        <ul>
+            <li><a href="{% url 'all_books' %}">Show All Books</a></li>
+            <li><a href="{% url 'filter_books' %}">Filter Books</a></li>
+            <li><a href="{% url 'users_list' %}">List Users</a></li>
+            <li><a href="{% url 'create_order' %}">Create Order</a></li>
+            <li><a href="{% url 'user_orders' %}">My Orders</a></li>
+            {% if user.role == 1 %}  <!-- Access only for librarian -->
+                <li><a href="{% url 'books_by_user' user.id %}">Books Borrowed by Users</a></li>
+                <li><a href="{% url 'orders_list' %}">Manage Orders</a></li>
+                <li><a href="{% url 'authors_list' %}">Manage Authors</a></li>
+            {% endif %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    {% else %}
+        <h2>Welcome to the Library System</h2>
+        <p>This is the main page of the library system. Use the navigation to login or register.</p>
+        <ul>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    {% endif %}
+</body>
+</html>
